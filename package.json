@@ -1,0 +1,21 @@
+{
+  "name": "docker-build-tag-push",
+  "version": "1.0.0",
+  "description": "Build tag and push your project based on your package.json details",
+  "bin": {
+    "docker-build-tag-push": "./docker-build-tag-push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanramage/docker-build-tag-push.git"
+  },
+  "keywords": [
+    "docker"
+  ],
+  "author": "Ryan Ramage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanramage/docker-build-tag-push/issues"
+  },
+  "homepage": "https://github.com/ryanramage/docker-build-tag-push"
+}

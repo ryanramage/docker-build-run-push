@@ -1,0 +1,14 @@
+#/bin/bash
+
+VERSION=$(node -e "console.log(require('./package.json').version)")
+NAME=$(node -e "console.log(require('./package.json').name)")
+REGISTRY=$(node -e "console.log(require('./package.json')['docker-registry'])")
+
+echo "$VERSION"
+
+docker build -t="$NAME:$VERSION" .
+docker tag $NAME:$VERSION $REGISTRY/$NAME
+docker push $REGISTRY/$NAME
+docker tag $NAME:$VERSION $REGISTRY/$NAME:$VERSION
+docker push $REGISTRY/$NAME:$VERSION
+
