@@ -9,7 +9,7 @@ Usage
 
 in your project, execute
 
-    npm install docker-build-tag-push
+    npm install docker-build-tag-push --save
 
 add the following to your package.json
 
