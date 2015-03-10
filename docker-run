@@ -1,0 +1,6 @@
+#/bin/bash
+
+VERSION=$(node -e "console.log(require('./package.json').version)")
+NAME=$(node -e "console.log(require('./package.json').name)")
+
+docker run $NAME:$VERSION
