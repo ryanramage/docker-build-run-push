@@ -1,13 +1,13 @@
 {
   "name": "docker-build-run-push",
   "version": "1.2.1",
-  "description": "Build tag and push your project based on your package.json details",
+  "description": "Build, run and push your project based on your package.json details",
   "bin": {
-    "docker-build-tag-push": "./docker-build-tag-push"
+    "docker-push": "./docker-push"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryanramage/docker-build-tag-push.git"
+    "url": "https://github.com/ryanramage/docker-build-run-push.git"
   },
   "keywords": [
     "docker"
@@ -15,7 +15,7 @@
   "author": "Ryan Ramage",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ryanramage/docker-build-tag-push/issues"
+    "url": "https://github.com/ryanramage/docker-build-run-push/issues"
   },
-  "homepage": "https://github.com/ryanramage/docker-build-tag-push"
+  "homepage": "https://github.com/ryanramage/docker-build-run-push"
 }
