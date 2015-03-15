@@ -11,4 +11,6 @@ docker tag $NAME:$VERSION $REGISTRY/$NAME
 docker push $REGISTRY/$NAME
 docker tag $NAME:$VERSION $REGISTRY/$NAME:$VERSION
 docker push $REGISTRY/$NAME:$VERSION
+docker tag -f $NAME:$VERSION $REGISTRY/$NAME:latest
+docker push $REGISTRY/$NAME:latest
 

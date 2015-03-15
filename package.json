@@ -1,5 +1,5 @@
 {
-  "name": "docker-build-tag-push",
+  "name": "docker-build-run-push",
   "version": "1.2.1",
   "description": "Build tag and push your project based on your package.json details",
   "bin": {
