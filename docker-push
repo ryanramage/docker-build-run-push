@@ -2,15 +2,22 @@
 
 VERSION=$(node -e "console.log(require('./package.json').version)")
 NAME=$(node -e "console.log(require('./package.json').name.split('/').pop())")
-REGISTRY=$(node -e "console.log(require('./package.json')['docker-registry'])")
+PREFIX=$(node -e "console.log(require('./package.json')['docker-registry'] || '')")
+if [ -z "$PREFIX" ]; then
+	PREFIX=$(node -e "console.log(require('./package.json')['docker-user'] || '')")
+fi
+if [ -z "$PREFIX" ]; then
+	echo "docker push requires either docker-registry or docker-user in package.json"
+	exit 1
+fi
 
 echo "$VERSION"
 
 docker build -t="$NAME:$VERSION" .
-docker tag $NAME:$VERSION $REGISTRY/$NAME
-docker push $REGISTRY/$NAME
-docker tag $NAME:$VERSION $REGISTRY/$NAME:$VERSION
-docker push $REGISTRY/$NAME:$VERSION
-docker tag -f $NAME:$VERSION $REGISTRY/$NAME:latest
-docker push $REGISTRY/$NAME:latest
+docker tag $NAME:$VERSION $PREFIX/$NAME
+docker push $PREFIX/$NAME
+docker tag $NAME:$VERSION $PREFIX/$NAME:$VERSION
+docker push $PREFIX/$NAME:$VERSION
+docker tag -f $NAME:$VERSION $PREFIX/$NAME:latest
+docker push $PREFIX/$NAME:latest
 
