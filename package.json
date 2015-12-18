@@ -1,6 +1,6 @@
 {
   "name": "docker-build-run-push",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "Build, run and push your project based on your package.json details",
   "repository": {
     "type": "git",
