@@ -14,5 +14,10 @@
   "bugs": {
     "url": "https://github.com/ryanramage/docker-build-run-push/issues"
   },
-  "homepage": "https://github.com/ryanramage/docker-build-run-push"
+  "homepage": "https://github.com/ryanramage/docker-build-run-push",
+  "bin": {
+    "docker-build": "./docker-build",
+    "docker-push": "./docker-push",
+    "docker-run": "./docker-run"
+  }
 }
