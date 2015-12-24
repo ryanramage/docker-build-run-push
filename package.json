@@ -1,6 +1,6 @@
 {
   "name": "docker-build-run-push",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "npm scripts to automate working with docker images.",
   "repository": {
     "type": "git",
