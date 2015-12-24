@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
-VERSION=$(node -e "console.log(require('./package.json').version)")
-NAME=$(node -e "console.log(require('./package.json').name.split('/').pop())")
+if [ -z "$VERSION" ]; then
+    VERSION=$(node -e "console.log(require('./package.json').version)")
+fi
+
+if [ -z "$NAME" ]; then
+    NAME=$(node -e "console.log(require('./package.json').name.split('/').pop())")
+fi
 
 echo "$VERSION"
 
-docker build -t="$NAME:$VERSION" .
-
-
+docker build -t "$NAME:$VERSION" .
