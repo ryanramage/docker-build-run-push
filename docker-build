@@ -10,4 +10,4 @@ fi
 
 echo "$VERSION"
 
-docker build -t "$NAME:$VERSION" .
+docker build -t "$NAME:$VERSION" "$@" .
