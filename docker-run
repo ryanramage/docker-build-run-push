@@ -8,4 +8,24 @@ if [ -z "$NAME" ]; then
     NAME=$(node -e "console.log(require('./package.json').name.split('/').pop())")
 fi
 
-docker run "$NAME:$VERSION" "$@"
+
+if [ "$#" -ne 0 ]; then
+	PRE=$(echo "$@" | cut -d "+" -f 1)
+	POST=$(echo "$@" | cut -d "+" -f 2)
+	echo "$PRE and $POST"
+	if [ "$POST" == "$PRE" ]; then
+		echo "single version"
+		echo docker run "$NAME:$VERSION" "$@"
+		docker run "$NAME:$VERSION" "$@"				
+
+	else
+		echo "split version"
+		echo docker run "$PRE" "$NAME:$VERSION" "$POST"
+		docker run $PRE "$NAME:$VERSION" $POST
+
+	fi
+
+
+else
+	docker run "$NAME:$VERSION"
+fi
