@@ -66,3 +66,8 @@ Start an interactive terminal
 
     npm run docker-run -- -i -t + /bin/bash
 
+You can also simply this by adding to your npm script directly. Here is an example of setting enviroment variables for docker:
+
+    "docker-run": "docker-run \"-e SPOT_TASKS=geocode,khatba,es-sync +\"",
+
+
